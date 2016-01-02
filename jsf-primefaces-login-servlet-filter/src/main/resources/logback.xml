@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+
+    <!-- PROPERTIES -->
+    <property name="layout"
+        value="%d{HH:mm:ss.SSS} %-5level [%thread][%logger{0}] %m%n" />
+    <property name="logFile" value="jsf-primefaces-login-servlet-filter.log" />
+
+    <!-- APPENDERS -->
+    <appender name="APP_LOG_FILE"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${logFile}</File>
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logFile}.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${layout}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- LOGGERS -->
+    <logger name="com.codenotfound.primefaces" level="INFO" />
+    <logger name="org.primefaces" level="WARN" />
+
+    <!-- APPLICATION LOG LEVEL -->
+    <root level="WARN">
+        <appender-ref ref="APP_LOG_FILE" />
+    </root>
+
+</configuration>
