@@ -20,7 +20,7 @@
         <primefaces.version>5.3</primefaces.version>
 
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-        <jetty-maven-plugin.version>9.3.6.v20151106</jetty-maven-plugin.version>
+        <jetty-maven-plugin.version>9.2.14.v20151106</jetty-maven-plugin.version>
     </properties>
 
     <dependencies>
