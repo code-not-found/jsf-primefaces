@@ -81,7 +81,6 @@
                         <goals>
                             <goal>unpack</goal>
                         </goals>
-                        <inherited>false</inherited>
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
