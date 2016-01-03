@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.codenotfound</groupId>
+    <artifactId>jsf-primefaces-wildfly</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+
+    <name>JSF - PrimeFaces WildFly Example Using Maven</name>
+    <url>http://www.codenotfound.com/2016/01/primeFaces-wildfly-example-using-maven.html</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+
+        <servlet.version>3.1.0</servlet.version>
+        <jsf.version>2.2.12</jsf.version>
+        <primefaces.version>5.3</primefaces.version>
+
+        <version.wildfly>9.0.2.Final</version.wildfly>
+        <jboss.home>${project.build.directory}/wildfly-${version.wildfly}</jboss.home>
+        <server.config>standalone.xml</server.config>
+
+        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+        <maven-dependency-plugin>2.10</maven-dependency-plugin>
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+        <wildfly-maven-plugin.version>1.1.0.Alpha5</wildfly-maven-plugin.version>
+    </properties>
+
+    <dependencies>
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- JSF -->
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>${jsf.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-impl</artifactId>
+            <version>${jsf.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- PrimeFaces -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <!-- Unpack the distribution -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>unpack-wildfly</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.wildfly</groupId>
+                                    <artifactId>wildfly-dist</artifactId>
+                                    <version>${version.wildfly}</version>
+                                    <type>zip</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Copy server configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-standalone-xml</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${jboss.home}/standalone/configuration</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Maven WildFly plugin -->
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>${wildfly-maven-plugin.version}</version>
+                <configuration>
+                    <jbossHome>${jboss.home}</jbossHome>
+                    <serverConfig>${server.config}</serverConfig>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
