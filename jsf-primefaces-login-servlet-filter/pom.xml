@@ -8,7 +8,7 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>JSF - PrimeFaces Login Servlet Filter Example Using Jetty and Maven</name>
+    <name>JSF - PrimeFaces Login Servlet Filter Example using Jetty and Maven</name>
     <url>http://www.codenotfound.com/2016/01/jsf-primefaces-login-servlet-filter-example-using-jetty-and-maven.html</url>
 
     <properties>

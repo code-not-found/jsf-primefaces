@@ -8,8 +8,8 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>JSF - PrimeFaces Apache Tomcat Example Using Maven</name>
-    <url>http://www.codenotfound.com/2016/01/jsf-primefaces-apache-tomcat-example-using-maven.html</url>
+    <name>JSF - PrimeFaces Hello World Example using Apache Tomcat and Maven</name>
+    <url>http://www.codenotfound.com/2016/01/jsf-primefaces-hello-world-example-using-apache-tomcat-and-maven.html</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

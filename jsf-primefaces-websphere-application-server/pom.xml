@@ -8,7 +8,7 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>JSF - PrimeFaces Hello World Example Using WebSphere Application Server and Maven</name>
+    <name>JSF - PrimeFaces Hello World Example using WebSphere Application Server and Maven</name>
     <url>http://www.codenotfound.com/2016/01/jsf-primefaces-hello-world-example-using-websphere-application-server-and-maven.html</url>
 
     <properties>
