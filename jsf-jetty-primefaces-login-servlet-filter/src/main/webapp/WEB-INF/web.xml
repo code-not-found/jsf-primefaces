@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+
+    <display-name>PrimeFaces Login Example</display-name>
+
+    <!-- define the JSF listener class when using the jetty-maven-plugin 
+        with Jetty8 -->
+    <listener>
+        <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+    </listener>
+
+    <!-- login filter -->
+    <filter>
+        <filter-name>login</filter-name>
+        <filter-class>com.codenotfound.jsf.primefaces.filter.LoginFilter</filter-class>
+    </filter>
+    <!-- set the login filter to secure all the pages in the /secured/* path 
+        of the application -->
+    <filter-mapping>
+        <filter-name>login</filter-name>
+        <url-pattern>/secured/*</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>redirect.xhtml</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>faces</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>faces</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+</web-app>
