@@ -1,0 +1,11 @@
+jsf:
+  projectStage: Development
+  primefaces:
+    theme: bootstrap
+
+logging:
+  file: jsf-primefaces-spring-boot-hello-world.log
+
+server:
+  context-path: /codenotfound
+  port: 9090
