@@ -4,11 +4,11 @@
 
   <groupId>com.codenotfound</groupId>
   <artifactId>jsf-primefaces-jetty</artifactId>
-  <version>1.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>JSF - PrimeFaces Jetty Hello World Example</name>
-  <url>https://www.codenotfound.com/jsf-primefaces-jetty-hello-world-example.html</url>
+  <name>JSF - PrimeFaces Hello World Example using Jetty and Maven</name>
+  <url>https://www.codenotfound.com/jsf-primefaces-hello-world-example-jetty-maven.html</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
