@@ -25,6 +25,6 @@ public class HelloWorld {
   }
 
   public String showGreeting() {
-    return "Hello" + " " + firstName + " " + lastName + "!";
+    return "Hello " + firstName + " " + lastName + "!";
   }
 }
