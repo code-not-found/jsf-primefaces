@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.codenotfound</groupId>
-    <artifactId>jsf-primefaces-websphere-application-server</artifactId>
-    <version>1.0</version>
-    <packaging>war</packaging>
+  <groupId>com.codenotfound</groupId>
+  <artifactId>jsf-primefaces-websphere-application-server</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
 
-    <name>JSF - PrimeFaces Hello World Example using WebSphere Application Server and Maven</name>
-    <url>http://www.codenotfound.com/2016/01/jsf-primefaces-hello-world-example-using-websphere-application-server-and-maven.html</url>
+  <name>JSF - PrimeFaces Hello World Example using WebSphere Application Server and Maven</name>
+  <url>http://www.codenotfound.com/jsf-primefaces-hello-world-example-websphere-application-server-maven.html</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.6</java.version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.6</java.version>
 
-        <servlet.version>3.1.0</servlet.version>
-        <jsf.version>2.2.12</jsf.version>
-        <primefaces.version>5.3</primefaces.version>
+    <servlet.version>3.1.0</servlet.version>
+    <jsf.version>2.2.15</jsf.version>
+    <primefaces.version>6.1</primefaces.version>
 
-        <was.home>C:\Program Files (x86)\IBM\WebSphere\AppServer</was.home>
+    <was.home>C:\Program Files (x86)\IBM\WebSphere\AppServer</was.home>
 
-        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
-        <was-maven-plugin.version>1.1.2</was-maven-plugin.version>
-    </properties>
+    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+    <was-maven-plugin.version>1.1.2</was-maven-plugin.version>
+  </properties>
 
-    <dependencies>
-        <!-- Servlet -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- JSF -->
-        <dependency>
-            <groupId>com.sun.faces</groupId>
-            <artifactId>jsf-api</artifactId>
-            <version>${jsf.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.faces</groupId>
-            <artifactId>jsf-impl</artifactId>
-            <version>${jsf.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- PrimeFaces -->
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>${primefaces.version}</version>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <!-- Servlet -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- JSF -->
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-api</artifactId>
+      <version>${jsf.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-impl</artifactId>
+      <version>${jsf.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- PrimeFaces -->
+    <dependency>
+      <groupId>org.primefaces</groupId>
+      <artifactId>primefaces</artifactId>
+      <version>${primefaces.version}</version>
+    </dependency>
+  </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.orctom.mojo</groupId>
-                <artifactId>was-maven-plugin</artifactId>
-                <version>${was-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>deploy</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                        <configuration>
-                            <wasHome>${was.home}</wasHome>
-                            <user>admin</user>
-                            <password>admin</password>
-                            <host>localhost</host>
-                            <server>server1</server>
-                            <node>codenotfoundNode01</node>
-                            <virtualHost>default_host</virtualHost>
-                            <applicationName>${project.build.finalName}</applicationName>
-                            <contextRoot>codenotfound</contextRoot>
-                            <parentLast>true</parentLast>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <!-- was-maven-plugin -->
+      <plugin>
+        <groupId>com.orctom.mojo</groupId>
+        <artifactId>was-maven-plugin</artifactId>
+        <version>${was-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>deploy</id>
+            <phase>install</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+            <configuration>
+              <wasHome>${was.home}</wasHome>
+              <user>admin</user>
+              <password>admin</password>
+              <host>localhost</host>
+              <server>server1</server>
+              <node>codenotfoundNode01</node>
+              <virtualHost>default_host</virtualHost>
+              <applicationName>${project.build.finalName}</applicationName>
+              <contextRoot>codenotfound</contextRoot>
+              <parentLast>true</parentLast>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
