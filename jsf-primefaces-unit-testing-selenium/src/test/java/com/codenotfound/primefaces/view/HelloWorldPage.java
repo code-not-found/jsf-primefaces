@@ -19,5 +19,4 @@ public class HelloWorldPage {
     lastNameInput.sendKeys(lastName);
     submitButton.submit();
   }
-
 }
