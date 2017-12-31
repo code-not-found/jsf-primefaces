@@ -1,0 +1,28 @@
+language: java
+sudo: false
+install: true
+
+jdk:
+- oraclejdk8
+
+addons:
+  sonarqube:
+    organization: code-not-found-jsf-primefaces
+    token:
+      secure: $SONAR_TOKEN
+
+env:
+- PROJECT_DIR=jsf-primefaces-unit-testing-selenium
+
+script:
+- cd $PROJECT_DIR
+- mvn test -B
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+
+cache:
+  directories:
+  - $HOME/.m2/repository
+  - $HOME/.sonar/cache
+
+notifications:
+  email: false
