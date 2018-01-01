@@ -25,9 +25,7 @@ public class HelloWorldTest {
         PageFactory.initElements(driver, HelloWorldPage.class);
     page.submit("Jane", "Doe");
 
-    assertThat(
-        driver.findElement(By.id("hello-world-form:greeting-output"))
-            .getAttribute("textContent"))
-                .isEqualTo("Hello Jane Doe!");
+    assertThat(driver.findElement(By.id("hello-world-form:greeting"))
+        .getAttribute("textContent")).isEqualTo("Hello Jane Doe!");
   }
 }

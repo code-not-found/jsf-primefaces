@@ -14,22 +14,20 @@
     <p:panel header="PrimeFaces Hello World Example">
       <h:panelGrid columns="2" cellpadding="4">
         <h:outputText value="First Name: " />
-        <p:inputText id="first-name-input"
-          value="#{helloWorld.firstName}" />
+        <p:inputText id="first-name" value="#{helloWorld.firstName}" />
 
         <h:outputText value="Last Name: " />
-        <p:inputText id="last-name-input"
-          value="#{helloWorld.lastName}" />
+        <p:inputText id="last-name" value="#{helloWorld.lastName}" />
 
-        <p:commandButton id="submit-button" value="Submit"
-          update="greeting" oncomplete="PF('greetingDialog').show()" />
+        <p:commandButton id="submit" value="Submit" update="greeting"
+          oncomplete="PF('greetingDialog').show()" />
       </h:panelGrid>
     </p:panel>
 
     <p:dialog header="Greeting" widgetVar="greetingDialog"
       modal="true" resizable="false">
-      <h:panelGrid id="greeting" columns="1" cellpadding="4">
-        <h:outputText id="greeting-output"
+      <h:panelGrid columns="1" cellpadding="4">
+        <h:outputText id="greeting"
           value="#{helloWorld.showGreeting()}" />
       </h:panelGrid>
     </p:dialog>
