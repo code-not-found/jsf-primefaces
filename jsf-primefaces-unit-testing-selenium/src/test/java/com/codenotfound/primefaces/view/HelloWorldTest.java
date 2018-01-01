@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -17,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class HelloWorldTest {
 
   @Test
-  public void testSubmit() throws InterruptedException {
+  public void testSubmit() {
     WebDriver driver = new HtmlUnitDriver();
     driver.get("http://localhost:9090/codenotfound/helloworld.xhtml");
 
@@ -25,7 +24,8 @@ public class HelloWorldTest {
         PageFactory.initElements(driver, HelloWorldPage.class);
     page.submit("Jane", "Doe");
 
-    assertThat(driver.findElement(By.id("hello-world-form:greeting"))
-        .getAttribute("textContent")).isEqualTo("Hello Jane Doe!");
+    PageFactory.initElements(driver, page);
+
+    assertThat(page.getGreeting()).isEqualTo("Hello Jane Doe!");
   }
 }
