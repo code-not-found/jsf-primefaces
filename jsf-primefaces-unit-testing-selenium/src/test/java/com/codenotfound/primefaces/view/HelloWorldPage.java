@@ -1,9 +1,11 @@
 package com.codenotfound.primefaces.view;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class HelloWorldPage {
+public class HelloWorldPage extends PageObject {
 
   @FindBy(id = "hello-world-form:first-name")
   private WebElement firstNameInput;
@@ -17,10 +19,15 @@ public class HelloWorldPage {
   @FindBy(id = "hello-world-form:greeting")
   private WebElement greetingOutput;
 
+  public HelloWorldPage(WebDriver driver) {
+    super(driver);
+  }
+
   public void submit(String firstName, String lastName) {
     firstNameInput.sendKeys(firstName);
     lastNameInput.sendKeys(lastName);
     submitButton.submit();
+    PageFactory.initElements(driver, this);
   }
 
   public String getGreeting() {
