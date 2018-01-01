@@ -1,33 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration scan="true" scanPeriod="60 seconds">
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
 
-    <!-- PROPERTIES -->
-    <property name="layout"
-        value="%d{HH:mm:ss.SSS} %-5level [%thread][%logger{0}] %m%n" />
-    <property name="logFile" value="jsf-primefaces-login-servlet-filter.log" />
+  <logger name="com.codenotfound" level="INFO" />
+  <logger name="org.springframework" level="WARN" />
+  <!-- turn HtmlUnit warnings off -->
+  <logger name="com.gargoylesoftware.htmlunit" level="ERROR" />
+  <!-- turn tomcat scan warnings off -->
+  <logger name="org.apache.tomcat.util.scan" level="ERROR" />
 
-    <!-- APPENDERS -->
-    <appender name="APP_LOG_FILE"
-        class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${logFile}</File>
-        <rollingPolicy
-            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${logFile}.%d{yyyy-MM-dd}.log
-            </fileNamePattern>
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>${layout}</pattern>
-        </encoder>
-    </appender>
-
-    <!-- LOGGERS -->
-    <logger name="com.codenotfound.primefaces" level="INFO" />
-    <logger name="org.primefaces" level="WARN" />
-
-    <!-- APPLICATION LOG LEVEL -->
-    <root level="WARN">
-        <appender-ref ref="APP_LOG_FILE" />
-    </root>
-
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+  </root>
 </configuration>

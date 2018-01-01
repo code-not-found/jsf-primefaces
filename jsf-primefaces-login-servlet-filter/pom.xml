@@ -1,95 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.codenotfound</groupId>
-    <artifactId>jsf-primefaces-login-servlet-filter</artifactId>
-    <version>1.0</version>
-    <packaging>war</packaging>
+  <groupId>com.codenotfound</groupId>
+  <artifactId>jsf-primefaces-login-servlet-filter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-    <name>JSF - PrimeFaces Login Servlet Filter Example using Jetty and Maven</name>
-    <url>http://www.codenotfound.com/2016/01/jsf-primefaces-login-servlet-filter-example-using-jetty-and-maven.html</url>
+  <name>jsf-primefaces-login-servlet-filter</name>
+  <description>JSF - PrimeFaces Login Servlet Filter Example</description>
+  <url>https://www.codenotfound.com/jsf-primefaces-login-servlet-filter-example.html</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.7</java.version>
+  <parent>
+    <groupId>org.joinfaces</groupId>
+    <artifactId>jsf-spring-boot-parent</artifactId>
+    <version>2.4.1</version>
+    <relativePath /> <!-- lookup parent from repository -->
+  </parent>
 
-        <slf4j.version>1.7.13</slf4j.version>
-        <logback.version>1.1.3</logback.version>
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
 
-        <servlet.version>3.0.1</servlet.version>
-        <jsf.version>2.2.12</jsf.version>
-        <primefaces.version>5.3</primefaces.version>
+  <dependencies>
+    <!-- spring-boot -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <!-- joinfaces -->
+    <dependency>
+      <groupId>org.joinfaces</groupId>
+      <artifactId>jsf-spring-boot-starter</artifactId>
+    </dependency>
+  </dependencies>
 
-        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-        <jetty-maven-plugin.version>9.2.14.v20151106</jetty-maven-plugin.version>
-    </properties>
-
-    <dependencies>
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
-        <!-- Servlet -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- JSF -->
-        <dependency>
-            <groupId>com.sun.faces</groupId>
-            <artifactId>jsf-api</artifactId>
-            <version>${jsf.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.faces</groupId>
-            <artifactId>jsf-impl</artifactId>
-            <version>${jsf.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <!-- PrimeFaces -->
-        <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>${primefaces.version}</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty-maven-plugin.version}</version>
-                <configuration>
-                    <httpConnector>
-                        <port>9090</port>
-                    </httpConnector>
-                    <webApp>
-                        <contextPath>/codenotfound</contextPath>
-                    </webApp>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <!-- spring-boot-maven-plugin -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>
