@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces;
+package com.codenotfound.primefaces.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import com.codenotfound.primefaces.filter.LoginFilter;
 
 @Configuration
-public class SpringPrimeFacesApplicationConfig {
+public class FilterConfig {
 
   @Bean
   public FilterRegistrationBean loginFilter() {
