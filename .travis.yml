@@ -12,7 +12,7 @@ addons:
       secure: $SONAR_TOKEN
 
 env:
-- PROJECT_DIR=jsf-primefaces-login-servlet-filter
+- PROJECT_DIR=jsf-login-servlet-filter
 - PROJECT_DIR=jsf-primefaces-unit-testing-selenium
 - PROJECT_DIR=jsf-welcome-page-redirect
 

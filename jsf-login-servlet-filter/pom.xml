@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.codenotfound</groupId>
-  <artifactId>jsf-primefaces-login-servlet-filter</artifactId>
+  <artifactId>jsf-login-servlet-filter</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>jsf-primefaces-login-servlet-filter</name>
-  <description>JSF - PrimeFaces Login Servlet Filter Example</description>
-  <url>https://www.codenotfound.com/jsf-primefaces-login-servlet-filter-example.html</url>
+  <name>jsf-login-servlet-filter</name>
+  <description>JSF - Login Servlet Filter Example</description>
+  <url>https://www.codenotfound.com/jsf-login-servlet-filter-example.html</url>
 
   <parent>
     <groupId>org.joinfaces</groupId>
