@@ -1,0 +1,7 @@
+jsf:
+  primefaces: 
+    theme: cupertino
+
+server:
+  context-path: /codenotfound
+  port: 9090
