@@ -24,9 +24,12 @@ public class HelloWorldPage extends PageObject {
   }
 
   public void submit(String firstName, String lastName) {
+    // set the input fields
     firstNameInput.sendKeys(firstName);
     lastNameInput.sendKeys(lastName);
+    // submit the form
     submitButton.submit();
+    // refresh the output field
     PageFactory.initElements(driver, this);
   }
 
