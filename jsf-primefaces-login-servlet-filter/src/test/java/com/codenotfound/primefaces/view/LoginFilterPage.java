@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends PageObject {
+public class LoginFilterPage extends PageObject {
 
   @FindBy(id = "login-form:user-name")
   private WebElement userNameInput;
@@ -23,7 +23,10 @@ public class LoginPage extends PageObject {
   @FindBy(how = How.CLASS_NAME, using = "ui-messages-warn-summary")
   private WebElement warning;
 
-  public LoginPage(WebDriver driver) {
+  @FindBy(id = "unsecured-message_content")
+  private WebElement unsecuredMessage;
+
+  public LoginFilterPage(WebDriver driver) {
     super(driver);
   }
 
@@ -42,5 +45,9 @@ public class LoginPage extends PageObject {
 
   public String getWarning() {
     return warning.getText();
+  }
+
+  public String getUnsecuredMessage() {
+    return unsecuredMessage.getText();
   }
 }
