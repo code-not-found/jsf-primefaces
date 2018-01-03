@@ -1,6 +1,6 @@
 jsf:
   primefaces: 
-    theme: cupertino
+    theme: afterdark
 
 server:
   context-path: /codenotfound
