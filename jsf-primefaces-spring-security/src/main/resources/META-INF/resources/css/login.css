@@ -1,0 +1,19 @@
+body {
+  background-color: #E0E0E0;
+}
+
+.ui-widget-content {
+  background-color: #E0E0E0;
+}
+
+h2 {
+  margin-bottom: 10px
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.red {
+  color: #F44336;
+}
