@@ -1,0 +1,12 @@
+server:
+  context-path: /codenotfound
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cnf
+    username: codenotfound
+    password: p455w0rd
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
