@@ -4,10 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.codenotfound.primefaces.model.Car;
 import com.codenotfound.primefaces.repository.CarRepository;
@@ -18,7 +17,7 @@ public class CarsView implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  @Autowired
+  @Inject
   private CarRepository carRepository;
 
   private List<Car> cars;

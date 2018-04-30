@@ -9,7 +9,7 @@
 </h:head>
 
 <h:body>
-  <h:form id="hello-world">
+  <h:form id="helloworld-form">
 
     <p:panel header="PrimeFaces Hello World Example">
       <h:panelGrid columns="2" cellpadding="4">
@@ -19,14 +19,15 @@
         <h:outputText value="Last Name: " />
         <p:inputText id="last-name" value="#{helloWorld.lastName}" />
 
-        <p:commandButton id="submit" value="Submit" update="greeting"
+        <p:commandButton id="submit" value="Submit"
+          update="greeting-panel"
           oncomplete="PF('greetingDialog').show()" />
       </h:panelGrid>
     </p:panel>
 
     <p:dialog header="Greeting" widgetVar="greetingDialog"
       modal="true" resizable="false">
-      <h:panelGrid id="greeting" columns="1" cellpadding="4">
+      <h:panelGrid id="greeting-panel" columns="1" cellpadding="4">
         <h:outputText value="#{helloWorld.showGreeting()}" />
       </h:panelGrid>
     </p:dialog>

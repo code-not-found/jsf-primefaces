@@ -2,17 +2,20 @@ package com.codenotfound.primefaces.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity(name = "Car")
 public class Car {
 
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private String brand;
+
   private int year;
+
   private String color;
 
   public Car() {}
