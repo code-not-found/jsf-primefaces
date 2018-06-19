@@ -14,7 +14,7 @@ public class HelloWorldTest extends WebDriverTest {
 
   @Test
   public void testSubmit() {
-    driver.get("http://localhost:9090/codenotfound/helloworld.xhtml");
+    driver.get("http://localhost:8080/helloworld.xhtml");
 
     HelloWorldPage page = new HelloWorldPage(driver);
     page.submit("Jane", "Doe");
