@@ -1,15 +1,11 @@
-package com.codenotfound.primefaces.view;
+package com.codenotfound.primefaces;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import com.codenotfound.primefaces.model.Car;
-import com.codenotfound.primefaces.repository.CarRepository;
 
 @Named
 @ViewScoped
