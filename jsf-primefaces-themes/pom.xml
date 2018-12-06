@@ -4,37 +4,49 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.codenotfound</groupId>
-  <artifactId>jsf-primefaces-theme-spring-boot</artifactId>
+  <artifactId>jsf-primefaces-themes</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>jsf-primefaces-theme-spring-boot</name>
-  <description>JSF - Primefaces Theme using Spring Boot</description>
-  <url>https://www.codenotfound.com/jsf-primefaces-theme-spring-boot.html</url>
+  <name>jsf-primefaces-themes</name>
+  <description>JSF Primefaces Themes Example</description>
+  <url>https://codenotfound.com/jsf-primefaces-themes-example.html</url>
 
   <parent>
-    <groupId>org.joinfaces</groupId>
-    <artifactId>jsf-spring-boot-parent</artifactId>
-    <version>2.4.1</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.0.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <joinfaces.version>3.3.0-rc2</joinfaces.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.joinfaces</groupId>
+        <artifactId>joinfaces-dependencies</artifactId>
+        <version>${joinfaces.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
-    <!-- spring-boot -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-    </dependency>
-    <!-- joinfaces -->
     <dependency>
       <groupId>org.joinfaces</groupId>
-      <artifactId>jsf-spring-boot-starter</artifactId>
+      <artifactId>primefaces-spring-boot-starter</artifactId>
     </dependency>
-    <!-- primefaces -->
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.primefaces.themes</groupId>
       <artifactId>all-themes</artifactId>
@@ -52,7 +64,6 @@
 
   <build>
     <plugins>
-      <!-- spring-boot-maven-plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
