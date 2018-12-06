@@ -9,40 +9,56 @@
   <packaging>jar</packaging>
 
   <name>jsf-primefaces-spring-security</name>
-  <description>JSF - PrimeFaces Spring Security Example</description>
-  <url>https://www.codenotfound.com/jsf-primefaces-spring-security-example.html</url>
+  <description>JSF PrimeFaces Spring Security Example</description>
+  <url>https://codenotfound.com/jsf-primefaces-spring-security-example.html</url>
 
   <parent>
-    <groupId>org.joinfaces</groupId>
-    <artifactId>jsf-spring-boot-parent</artifactId>
-    <version>2.4.1</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.0.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <joinfaces.version>3.3.0-rc2</joinfaces.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.joinfaces</groupId>
+        <artifactId>joinfaces-dependencies</artifactId>
+        <version>${joinfaces.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
-    <!-- spring-boot -->
+    <dependency>
+      <groupId>org.joinfaces</groupId>
+      <artifactId>primefaces-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
-    <!-- joinfaces -->
-    <dependency>
-      <groupId>org.joinfaces</groupId>
-      <artifactId>jsf-spring-boot-starter</artifactId>
-    </dependency>
   </dependencies>
 
   <build>
     <plugins>
-      <!-- spring-boot-maven-plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
