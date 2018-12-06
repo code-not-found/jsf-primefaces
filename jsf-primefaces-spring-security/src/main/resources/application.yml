@@ -1,3 +1,0 @@
-server:
-  context-path: /codenotfound
-  port: 9090

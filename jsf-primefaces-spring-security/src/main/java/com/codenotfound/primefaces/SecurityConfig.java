@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces.config;
+package com.codenotfound.primefaces;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   public void configureGlobal(AuthenticationManagerBuilder auth)
       throws Exception {
     auth.inMemoryAuthentication().withUser("john.doe")
-        .password("1234").roles("USER").and().withUser("jane.doe")
-        .password("5678").roles("ADMIN");
+        .password("{noop}1234").roles("USER").and()
+        .withUser("jane.doe").password("{noop}5678").roles("ADMIN");
   }
 }
