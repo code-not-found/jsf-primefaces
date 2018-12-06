@@ -1,7 +1,0 @@
-jsf:
-  primefaces: 
-    theme: afterdark
-
-server:
-  context-path: /codenotfound
-  port: 9090
