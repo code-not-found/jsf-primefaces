@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces;
+package com.codenotfound;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

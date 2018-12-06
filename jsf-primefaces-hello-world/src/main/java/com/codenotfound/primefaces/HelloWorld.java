@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces.model;
+package com.codenotfound.primefaces;
 
 import javax.inject.Named;
 
