@@ -1,12 +1,14 @@
 package com.codenotfound.primefaces;
 
 import javax.inject.Named;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 @Named
 public class HelloWorld {
 
-  private String firstName = "John";
-  private String lastName = "Doe";
+  private String firstName = "";
+  private String lastName = "";
 
   public String getFirstName() {
     return firstName;
@@ -25,6 +27,9 @@ public class HelloWorld {
   }
 
   public String showGreeting() {
-    return "Hello " + firstName + " " + lastName + "!";
+    Authentication authentication =
+        SecurityContextHolder.getContext().getAuthentication();
+
+    return "Hello " + authentication.getName() + "!";
   }
 }
