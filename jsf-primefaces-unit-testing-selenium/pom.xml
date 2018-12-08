@@ -9,13 +9,13 @@
   <packaging>jar</packaging>
 
   <name>jsf-primefaces-unit-testing-selenium</name>
-  <description>JSF - Primefaces Automated Unit Testing using Selenium</description>
-  <url>https://www.codenotfound.com/jsf-primefaces-automated-unit-testing-selenium.html</url>
+  <description>JSF Primefaces Automated Unit Testing using Selenium</description>
+  <url>https://codenotfound.com/jsf-primefaces-automated-unit-testing-selenium.html</url>
 
   <parent>
-    <groupId>org.joinfaces</groupId>
-    <artifactId>joinfaces-parent</artifactId>
-    <version>3.2.1</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.0.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
 
@@ -23,52 +23,54 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-
-    <selenium-java.version>3.12.0</selenium-java.version>
-    <htmlunit-driver.version>2.31.0</htmlunit-driver.version>
-    <htmlunit-cssparser.version>1.0.0</htmlunit-cssparser.version>
+    <joinfaces.version>3.3.0-rc2</joinfaces.version>
+    <selenium-htmlunit-driver.version>2.52.0</selenium-htmlunit-driver.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.joinfaces</groupId>
+        <artifactId>joinfaces-dependencies</artifactId>
+        <version>${joinfaces.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
-    <!-- spring-boot -->
+    <dependency>
+      <groupId>org.joinfaces</groupId>
+      <artifactId>primefaces-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- joinfaces -->
-    <dependency>
-      <groupId>org.joinfaces</groupId>
-      <artifactId>primefaces-spring-boot-starter</artifactId>
-    </dependency>
-    <!-- selenium -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>${selenium-java.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>htmlunit-driver</artifactId>
-      <version>${htmlunit-driver.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>net.sourceforge.htmlunit</groupId>
-      <artifactId>htmlunit-cssparser</artifactId>
-      <version>${htmlunit-cssparser.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
     <plugins>
-      <!-- spring-boot-maven-plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
