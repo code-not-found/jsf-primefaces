@@ -1,9 +1,10 @@
-package com.codenotfound.primefaces.view;
+package com.codenotfound.primefaces;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import com.codenotfound.PageObject;
 
 public class HelloWorldPage extends PageObject {
 

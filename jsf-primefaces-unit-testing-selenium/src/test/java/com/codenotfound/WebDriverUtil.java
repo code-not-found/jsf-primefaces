@@ -1,14 +1,13 @@
-package com.codenotfound.primefaces.view;
+package com.codenotfound;
 
 import java.util.concurrent.TimeUnit;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class WebDriverTest {
+public class WebDriverUtil {
 
   protected static WebDriver driver;
 

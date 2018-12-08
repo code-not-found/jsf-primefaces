@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces.view;
+package com.codenotfound;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

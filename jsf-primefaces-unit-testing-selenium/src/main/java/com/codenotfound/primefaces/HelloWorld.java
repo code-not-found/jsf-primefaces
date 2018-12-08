@@ -1,8 +1,8 @@
-package com.codenotfound.primefaces.model;
+package com.codenotfound.primefaces;
 
-import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
-@ManagedBean
+@Named
 public class HelloWorld {
 
   private String firstName;
