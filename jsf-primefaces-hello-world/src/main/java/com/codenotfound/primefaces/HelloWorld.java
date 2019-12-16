@@ -1,8 +1,8 @@
 package com.codenotfound.primefaces;
 
-import javax.inject.Named;
+import org.springframework.stereotype.Component;
 
-@Named
+@Component
 public class HelloWorld {
 
   private String firstName = "John";
